@@ -1,5 +1,7 @@
 package combatgame.entities;
 
+import combatgame.naming.Name;
+
 /**
  * The {@link Entity} class represents an entity within the combat game.
  * Entities have names and some amount of health, and can be dealt damage by
@@ -7,48 +9,46 @@ package combatgame.entities;
  */
 public abstract class Entity {
 	/**
-	 * The name of this Entity.
+	 * The name of this entity.
 	 */
-	public final String NAME;
+	public final Name NAME;
 
 	/**
-	 * The amount of health this Entity has remaining.
+	 * The amount of health this entity has remaining.
 	 */
 	private int health;
 
 	/**
-	 * Construct an Entity with the given name and amount of starting health.
-	 * 
 	 * @param name           The name of this entity.
-	 * @param startingHealth The amount of health this Entity starts with.
+	 * @param startingHealth The amount of health this entity starts with.
 	 */
-	protected Entity(String name, int startingHealth) {
+	protected Entity(Name name, int startingHealth) {
 		this.NAME = name;
 		this.health = startingHealth;
 	}
 
 	/**
-	 * Cause this Entity to take some amount of damage.
-	 * 
-	 * @param damageAmount The amount of damage to deal to this Entity.
+	 * Cause this entity to take some amount of damage.
+	 *
+	 * @param damageAmount The amount of damage to deal to this entity.
 	 */
 	public void takeDamage(int damageAmount) {
 		health -= damageAmount;
 	}
 
 	/**
-	 * Check if this Entity is dead.
-	 * 
-	 * @return True if this Entity is dead, false otherwise.
+	 * Check if this entity is dead.
+	 *
+	 * @return True if this entity is dead, false otherwise.
 	 */
 	public boolean isDead() {
 		return health <= 0;
 	}
 
 	/**
-	 * Get the amount of health this Entity has remaining.
-	 * 
-	 * @return The amount of health this Entity has remaining.
+	 * Get the amount of health this entity has remaining.
+	 *
+	 * @return The amount of health this entity has remaining.
 	 */
 	public int getHealth() {
 		return health;
