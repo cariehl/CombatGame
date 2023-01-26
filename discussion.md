@@ -20,6 +20,8 @@
 
 ### General
 
-* What are all the different layers involved in this combat game, from start to finish?
+* What is a "main game loop"?
+  * Where is the main game loop located in this code?
+  * What other loops are involved as a part of the main game loop?
 * How can we add a new enemy for the player to fight?
 * How can we add a new action for the player to take?
