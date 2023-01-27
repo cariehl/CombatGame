@@ -1,4 +1,4 @@
-package combatgame.entities.player;
+package combatgame.player;
 
 import java.util.Scanner;
 
@@ -39,7 +39,7 @@ public class Player extends Entity {
 	/**
 	 * Create a new Player with the given name and amount of starting health, and
 	 * default amount of attack power.
-	 * 
+	 *
 	 * @param name           The name of this Player.
 	 * @param startingHealth The amount of health this Player starts with.
 	 * @param attackPower    The amount of attack power this Player starts with.
@@ -55,7 +55,7 @@ public class Player extends Entity {
 	/**
 	 * Prompt the user to select which combat action they would like to perform,
 	 * then perform it against the given Enemy.
-	 * 
+	 *
 	 * @param player The Enemy that this Player is in combat with.
 	 */
 	public void performCombatAction(Enemy enemy) {
@@ -70,7 +70,7 @@ public class Player extends Entity {
 
 		// Do something based on the player's choice.
 		if (userChoice == CombatActionChoice.ATTACK) {
-			System.out.println(String.format("You swing your sword at the %s!", enemy.NAME));
+			System.out.println(String.format("You swing your sword at the %s!", enemy.name));
 			enemy.takeDamage(attackPower);
 		} else if (userChoice == CombatActionChoice.DEFEND) {
 			System.out.println("You raise your shield...");
@@ -82,7 +82,7 @@ public class Player extends Entity {
 
 	/**
 	 * Deal damage to this Player. Damage may be modified if the Player is blocking.
-	 * 
+	 *
 	 * @param damageAmount The amount of incoming damage to deal.
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class Player extends Entity {
 
 	/**
 	 * Prompt the user to choose which combat action they would like to perform.
-	 * 
+	 *
 	 * @return The action that the user selects.
 	 */
 	private CombatActionChoice promptUserForInput() {

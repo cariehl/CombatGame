@@ -1,7 +1,7 @@
 package combatgame;
 
 import combatgame.entities.enemies.Enemy;
-import combatgame.entities.player.Player;
+import combatgame.player.Player;
 
 /**
  * The {@link CombatGameEngine} is what drives the entire combat game. You can
@@ -21,7 +21,7 @@ public class CombatGameEngine {
 
 	/**
 	 * Construct a new {@link CombatGameEngine}.
-	 * 
+	 *
 	 * @param player  The player of the combat game.
 	 * @param enemies A list of enemies for the player to fight, in order of
 	 *                appearance.
@@ -36,25 +36,25 @@ public class CombatGameEngine {
 	 * until the player either defeats all of the enemies, or dies.
 	 */
 	public void run() {
-		System.out.println(String.format("Welcome, %s! Your journey begins!", player.NAME));
+		System.out.println(String.format("Welcome, %s! Your journey begins!", player.name));
 
 		for (Enemy enemy : enemies) {
 			// Introduce this enemy.
 			System.out.println();
 			System.out.println("You continue on your journey...");
-			System.out.println(String.format("You encounter a %s!", enemy.NAME));
+			System.out.println(String.format("You encounter a %s!", enemy.name));
 
 			while (!player.isDead() && !enemy.isDead()) {
 				// Display current health values.
 				System.out.println(String.format("You have %d health.", player.getHealth()));
-				System.out.println(String.format("The %s has %d health.", enemy.NAME, enemy.getHealth()));
+				System.out.println(String.format("The %s has %d health.", enemy.name, enemy.getHealth()));
 
 				// Player takes their turn.
 				player.performCombatAction(enemy);
 
 				if (enemy.isDead()) {
 					// The player killed the enemy. Move on to the next one.
-					System.out.println(String.format("You defeat the %s!", enemy.NAME));
+					System.out.println(String.format("You defeat the %s!", enemy.name));
 					break;
 				} else {
 					// The enemy is alive, so they take their turn.

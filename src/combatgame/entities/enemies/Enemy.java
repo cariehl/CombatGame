@@ -1,7 +1,7 @@
 package combatgame.entities.enemies;
 
 import combatgame.entities.Entity;
-import combatgame.entities.player.Player;
+import combatgame.player.Player;
 
 // TODO: Create your own custom Enemy subclasses in separate files. You can use
 // the Goblin and RagingGoblin classes as examples.
@@ -14,7 +14,7 @@ import combatgame.entities.player.Player;
 public abstract class Enemy extends Entity {
 	/**
 	 * Protected constructor, called by subclasses to initialize this Enemy.
-	 * 
+	 *
 	 * @param name           The name of this Enemy.
 	 * @param startingHealth The amount of health this Enemy starts with.
 	 */
@@ -26,7 +26,7 @@ public abstract class Enemy extends Entity {
 	 * Tell this Enemy to perform a combat action against the given Player. This
 	 * could be the same action every time, or it could change depending on the
 	 * circumstance.
-	 * 
+	 *
 	 * @param player The Player that this Enemy is in combat with.
 	 */
 	public abstract void performCombatAction(Player player);
@@ -36,7 +36,7 @@ public abstract class Enemy extends Entity {
 	 */
 	@Override
 	public void takeDamage(int damageAmount) {
-		System.out.println(String.format("The %s takes %d damage.", NAME, damageAmount));
+		System.out.println(String.format("The %s takes %d damage.", name, damageAmount));
 		super.takeDamage(damageAmount);
 	}
 }

@@ -4,7 +4,7 @@ import combatgame.CombatGameEngine;
 import combatgame.entities.enemies.Enemy;
 import combatgame.entities.enemies.Goblin;
 import combatgame.entities.enemies.RagingGoblin;
-import combatgame.entities.player.Player;
+import combatgame.player.Player;
 
 /**
  * This class provides the entrypoint for the program via the `main` method.

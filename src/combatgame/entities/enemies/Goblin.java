@@ -1,6 +1,6 @@
 package combatgame.entities.enemies;
 
-import combatgame.entities.player.Player;
+import combatgame.player.Player;
 
 /**
  * A {@link Goblin} is a basic enemy. It attacks the player every turn until
@@ -25,7 +25,7 @@ public class Goblin extends Enemy {
 
 	@Override
 	public void performCombatAction(Player player) {
-		System.out.println(String.format("The %s swings its mace at you!", NAME));
+		System.out.println(String.format("The %s swings its mace at you!", name));
 		player.takeDamage(attackPower);
 	}
 }

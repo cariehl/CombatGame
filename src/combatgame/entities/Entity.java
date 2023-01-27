@@ -9,7 +9,7 @@ public abstract class Entity {
 	/**
 	 * The name of this Entity.
 	 */
-	public final String NAME;
+	public final String name;
 
 	/**
 	 * The amount of health this Entity has remaining.
@@ -18,18 +18,18 @@ public abstract class Entity {
 
 	/**
 	 * Construct an Entity with the given name and amount of starting health.
-	 * 
+	 *
 	 * @param name           The name of this entity.
 	 * @param startingHealth The amount of health this Entity starts with.
 	 */
 	protected Entity(String name, int startingHealth) {
-		this.NAME = name;
+		this.name = name;
 		this.health = startingHealth;
 	}
 
 	/**
 	 * Cause this Entity to take some amount of damage.
-	 * 
+	 *
 	 * @param damageAmount The amount of damage to deal to this Entity.
 	 */
 	public void takeDamage(int damageAmount) {
@@ -38,7 +38,7 @@ public abstract class Entity {
 
 	/**
 	 * Check if this Entity is dead.
-	 * 
+	 *
 	 * @return True if this Entity is dead, false otherwise.
 	 */
 	public boolean isDead() {
@@ -47,7 +47,7 @@ public abstract class Entity {
 
 	/**
 	 * Get the amount of health this Entity has remaining.
-	 * 
+	 *
 	 * @return The amount of health this Entity has remaining.
 	 */
 	public int getHealth() {

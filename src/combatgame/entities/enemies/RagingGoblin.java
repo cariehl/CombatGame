@@ -1,6 +1,6 @@
 package combatgame.entities.enemies;
 
-import combatgame.entities.player.Player;
+import combatgame.player.Player;
 
 /**
  * A {@link RagingGoblin} is a bit more complex than the regular {@link Goblin}.
@@ -36,13 +36,13 @@ public class RagingGoblin extends Enemy {
 	@Override
 	public void performCombatAction(Player player) {
 		if (isTired) {
-			System.out.println(String.format("The %s is too exhausted to attack.", NAME));
+			System.out.println(String.format("The %s is too exhausted to attack.", name));
 		} else {
 			int damageAmount = attackPower * 2;
-			System.out.println(String.format("The %s wildly attacks you with its claws!", NAME));
+			System.out.println(String.format("The %s wildly attacks you with its claws!", name));
 			player.takeDamage(damageAmount);
 			isTired = true;
-			System.out.println(String.format("The %s looks exhausted...", NAME));
+			System.out.println(String.format("The %s looks exhausted...", name));
 		}
 	}
 }
