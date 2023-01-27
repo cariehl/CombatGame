@@ -1,5 +1,6 @@
 package combatgame.player;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import combatgame.entities.Entity;
@@ -123,7 +124,14 @@ public class Player extends Entity {
 			System.out.println("2 - Run away");
 			System.out.print("> ");
 
-			int userChoice = scanner.nextInt();
+			int userChoice;
+			try {
+				userChoice = scanner.nextInt();
+			} catch (InputMismatchException e){
+				System.out.println("Unrecognized action. Please select one of the available options.");
+				scanner.nextLine();
+				continue;
+			}
 			if (userChoice >= 0 && userChoice < CombatActionChoice.values().length) {
 				return CombatActionChoice.values()[userChoice];
 			} else {
