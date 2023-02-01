@@ -1,5 +1,6 @@
 package combatgame.player;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import combatgame.entities.Entity;
@@ -184,7 +185,15 @@ public class Player extends Entity {
 			inventory.showItems();
 			System.out.print("> ");
 
-			int userChoice = scanner.nextInt();
+			int userChoice;
+			try {
+				userChoice = scanner.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("Unrecognized action. Please select one of the available options.");
+				scanner.nextLine();
+				continue;
+			}
+      
 			if (userChoice >= -1 && userChoice < inventory.size()) {
 				return userChoice;
 			} else {
