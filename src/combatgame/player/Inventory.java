@@ -33,6 +33,15 @@ public class Inventory {
 	}
 
 	/**
+	 * Get the number of items in this inventory.
+	 *
+	 * @return The number of items in the inventory.
+	 */
+	public int size() {
+		return items.size();
+	}
+
+	/**
 	 * Display an indexed list of the items contained by this inventory.
 	 */
 	public void showItems() {

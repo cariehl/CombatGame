@@ -28,6 +28,15 @@ public abstract class Entity {
 	}
 
 	/**
+	 * Restore some amount of health to this Entity.
+	 *
+	 * @param healAmount The amount of health to restore.
+	 */
+	public void restoreHealth(int healAmount) {
+		health += healAmount;
+	}
+
+	/**
 	 * Cause this Entity to take some amount of damage.
 	 *
 	 * @param damageAmount The amount of damage to deal to this Entity.

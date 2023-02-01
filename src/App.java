@@ -4,6 +4,8 @@ import combatgame.CombatGameEngine;
 import combatgame.entities.enemies.Enemy;
 import combatgame.entities.enemies.Goblin;
 import combatgame.entities.enemies.RagingGoblin;
+import combatgame.items.HealingPotion;
+import combatgame.items.Item;
 import combatgame.player.Player;
 
 /**
@@ -18,6 +20,14 @@ public class App {
 	private static final Enemy[] ENEMY_LIST = new Enemy[] {
 			// TODO: Add your custom Enemy subclasses here.
 			new Goblin(), new RagingGoblin()
+	};
+
+	/**
+	 * The list of items that start in the player's inventory.
+	 */
+	private static final Item[] PLAYER_STARTING_ITEMS = new Item[] {
+			// TODO: Add any items you want the player to start with here.
+			new HealingPotion()
 	};
 
 	/**
@@ -42,7 +52,8 @@ public class App {
 		System.out.print("> ");
 		String playerName = scanner.nextLine();
 
-		Player player = new Player(playerName, PLAYER_STARTING_HEALTH, PLAYER_STARTING_ATTACK_POWER, scanner);
+		Player player = new Player(playerName, PLAYER_STARTING_HEALTH, PLAYER_STARTING_ATTACK_POWER,
+				PLAYER_STARTING_ITEMS, scanner);
 
 		CombatGameEngine engine = new CombatGameEngine(player, ENEMY_LIST);
 		engine.run();
